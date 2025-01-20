@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkapps_docs=self.webpackChunkapps_docs||[]).push([[6384],{749:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/react-component-library-starter/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

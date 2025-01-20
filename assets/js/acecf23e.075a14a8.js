@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkapps_docs=self.webpackChunkapps_docs||[]).push([[1903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/react-component-library-starter/blog","blogTitle":"Blog","authorsListPath":"/react-component-library-starter/blog/authors"}')}}]);
