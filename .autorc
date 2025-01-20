@@ -24,8 +24,8 @@
       "omit-commits",
       {
         "subject": [
-          "(site)",
-          "[site]",
+          "(apps-docs)",
+          "[apps-docs]",
           "(ci)",
           "[ci]",
           "(deps)",
