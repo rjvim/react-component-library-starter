@@ -4,7 +4,7 @@ function Button(props: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <button
       type="button"
-      className="rounded bg-cyan-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600"
+      className="el-rounded el-bg-cyan-600 el-px-2 el-py-1 el-text-xs el-font-semibold el-text-white el-shadow-sm el-hover:bg-cyan-500 focus-visible:el-outline focus-visible:el-outline-2 focus-visible:el-outline-offset-2 focus-visible:el-outline-cyan-600"
     >
       {JSON.stringify(props)}
     </button>
