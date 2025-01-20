@@ -1,7 +1,11 @@
-import "../index.css";
+import "../lib/main.ts";
+import { Badge, Button } from "../lib/main.ts";
 
 export default function App() {
   return (
-    <h1 className="text-3xl bg-red-500 font-bold underline">Hello world!</h1>
+    <>
+      <Button>I am a button</Button>
+      <Badge>I am a badge</Badge>
+    </>
   );
 }
