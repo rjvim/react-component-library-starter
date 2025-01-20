@@ -1,4 +1,4 @@
 {
   "extends": "./tsconfig.app.json",
-  "include": ["lib", "index.css"]
+  "include": ["lib"]
 }
