@@ -8,7 +8,9 @@
     "docs:start": "lerna run start --scope apps-docs",
     "docs:build": "lerna run build --scope apps-docs",
     "docs:serve": "lerna run serve --scope apps-docs",
-    "docs:deploy": "lerna run deploy --scope apps-docs"
+    "docs:deploy": "lerna run deploy --scope apps-docs",
+    "package:build": "lerna run build --scope @rjvim/rcls-elements",
+    "package:dev": "lerna run dev --scope @rjvim/rcls-elements"
   },
   "dependencies": {},
   "devDependencies": {
