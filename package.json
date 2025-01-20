@@ -4,6 +4,12 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "docs:start": "lerna run start --scope apps-docs",
+    "docs:build": "lerna run build --scope apps-docs",
+    "docs:serve": "lerna run serve --scope apps-docs",
+    "docs:deploy": "lerna run deploy --scope apps-docs"
+  },
   "dependencies": {},
   "devDependencies": {
     "lerna": "^8.1.9"
