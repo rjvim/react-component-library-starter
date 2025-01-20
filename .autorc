@@ -1,0 +1,55 @@
+{
+  "author": {
+    "name": "rjvim",
+    "email": "rajiv@betalectic.com"
+  },
+  "baseBranch": "main",
+  "onlyPublishWithReleaseLabel": true,
+  "plugins": [
+    "all-contributors",
+    [
+      "npm",
+      {
+        "forcePublish": false
+      }
+    ],
+    [
+      "conventional-commits",
+      {
+        "defaultReleaseType": "patch"
+      }
+    ],
+    "released",
+    [
+      "omit-commits",
+      {
+        "subject": [
+          "(site)",
+          "[site]",
+          "(ci)",
+          "[ci]",
+          "(deps)",
+          "[deps]"
+        ],
+        "labels": [
+          "apps-docs",
+          "deps"
+        ]
+      }
+    ],
+    [
+      "omit-release-notes",
+      {
+        "labels": [
+          "apps-docs",
+          "ci-cd"
+        ]
+      }
+    ]
+  ],
+  "prereleaseBranches": [
+    "alpha",
+    "beta",
+    "next"
+  ]
+}

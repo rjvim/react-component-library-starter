@@ -9,11 +9,17 @@
     "docs:build": "lerna run build --scope apps-docs",
     "docs:serve": "lerna run serve --scope apps-docs",
     "docs:deploy": "lerna run deploy --scope apps-docs",
-    "package:build": "lerna run build --scope @rjvim/rcls-elements",
-    "package:dev": "lerna run dev --scope @rjvim/rcls-elements"
+    "package:build": "lerna run build --scope @rcls/elements",
+    "package:dev": "lerna run dev --scope @rcls/elements"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@auto-it/all-contributors": "^11.3.0",
+    "@auto-it/conventional-commits": "^11.3.0",
+    "@auto-it/npm": "^11.3.0",
+    "@auto-it/omit-commits": "^11.3.0",
+    "@auto-it/omit-release-notes": "^11.3.0",
+    "@auto-it/released": "^11.3.0",
+    "auto": "^11.3.0",
     "lerna": "^8.1.9"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@rjvim/rcls-elements",
+  "name": "@rcls/elements",
   "publishConfig": {
     "access": "public"
   },
