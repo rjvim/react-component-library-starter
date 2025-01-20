@@ -10,9 +10,9 @@
       "types": "./dist/lib/main.d.ts",
       "default": "./dist/main.js"
     },
-    "./styles.css": {
-      "require": "./dist/styles.css",
-      "default": "./dist/styles.css"
+    "./rcls-elements.css": {
+      "require": "./dist/assets/rcls-elements.css",
+      "default": "./dist/assets/rcls-elements.css"
     }
   },
   "files": [
