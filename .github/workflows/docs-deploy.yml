@@ -1,0 +1,61 @@
+name: Docs Deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "apps/docs/**"
+      - ".github/workflows/docs-deploy.yml"
+
+concurrency:
+  group: site-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy-main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # Split the commands and add error handling
+
+      - name: Cleanup
+        run: npx lerna clean -y
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: site-npm-deps-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            site-npm-deps-${{ hashFiles('package-lock.json') }}
+
+      - name: Build site
+        run: |
+          npm run docs:build
+
+      # - name: Build site
+      #   run: |
+      #     timeout 1m npm run site:build || true
+      #     # Kill any remaining node processes
+      #     pkill node || true
+
+      - name: Debug directory structure
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Directory contents:"
+          ls -la
+          echo "Build directory contents:"
+          ls -la apps/docs/build/ || echo "Build directory not found!"
+
+      - uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./apps/docs/build/
+          branch: gh-pages
+          clean-exclude: pr-preview
+          force: false
