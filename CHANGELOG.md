@@ -1,3 +1,18 @@
+# v0.2.0 (Mon Jan 20 2025)
+
+#### 🚀 Enhancement
+
+- `apps-docs`
+  - feat: update documentation dependencies and add deployment workflow [#2](https://github.com/rjvim/react-component-library-starter/pull/2) ([@rjvim](https://github.com/rjvim))
+- `apps-docs`, `@rcls/elements`
+  - feat: integrate @rcls/elements for enhanced UI components and styles [#2](https://github.com/rjvim/react-component-library-starter/pull/2) ([@rjvim](https://github.com/rjvim))
+
+#### Authors: 1
+
+- Rajiv Seelam ([@rjvim](https://github.com/rjvim))
+
+---
+
 # v0.1.0 (Mon Jan 20 2025)
 
 #### 🚀 Enhancement

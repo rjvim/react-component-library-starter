@@ -1,3 +1,15 @@
+# v0.2.0 (Mon Jan 20 2025)
+
+#### 🚀 Enhancement
+
+- feat: integrate @rcls/elements for enhanced UI components and styles [#2](https://github.com/rjvim/react-component-library-starter/pull/2) ([@rjvim](https://github.com/rjvim))
+
+#### Authors: 1
+
+- Rajiv Seelam ([@rjvim](https://github.com/rjvim))
+
+---
+
 # v0.1.0 (Mon Jan 20 2025)
 
 #### 🚀 Enhancement
