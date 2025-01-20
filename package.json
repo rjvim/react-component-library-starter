@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "lerna run build",
     "docs:start": "lerna run start --scope apps-docs",
     "docs:build": "lerna run build --scope apps-docs",
     "docs:serve": "lerna run serve --scope apps-docs",
