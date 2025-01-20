@@ -1,10 +1,11 @@
 import type { Config } from "tailwindcss";
+import {
+  scopedPreflightStyles,
+  isolateInsideOfContainer,
+} from "tailwindcss-scoped-preflight";
 
 export default {
   prefix: "el-",
-  corePlugins: {
-    preflight: false,
-  },
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -13,5 +14,11 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    scopedPreflightStyles({
+      isolationStrategy: isolateInsideOfContainer(".twp", {
+        except: ".no-twp",
+      }),
+    }),
+  ],
 } satisfies Config;
