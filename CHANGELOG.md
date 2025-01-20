@@ -1,3 +1,23 @@
+# v0.3.0 (Mon Jan 20 2025)
+
+#### 🚀 Enhancement
+
+- `apps-docs`
+  - feat: update @rcls/elements package version to 0.2.1--canary.457943b.0 [#3](https://github.com/rjvim/react-component-library-starter/pull/3) ([@rjvim](https://github.com/rjvim))
+  - feat: update @rcls/elements package to version 0.2.1--canary.1a7da1f.0 [#3](https://github.com/rjvim/react-component-library-starter/pull/3) ([@rjvim](https://github.com/rjvim))
+  - feat: update markdown features demo to showcase elements with buttons and badges [#3](https://github.com/rjvim/react-component-library-starter/pull/3) ([@rjvim](https://github.com/rjvim))
+- `apps-docs`, `@rcls/elements`
+  - feat: update @rcls/elements package version and add tailwindcss-scoped-preflight support [#3](https://github.com/rjvim/react-component-library-starter/pull/3) ([@rjvim](https://github.com/rjvim))
+  - feat: update @rcls/elements package to version 0.2.1 and adjust import paths [#3](https://github.com/rjvim/react-component-library-starter/pull/3) ([@rjvim](https://github.com/rjvim))
+- `@rcls/elements`
+  - feat: add prefix to Tailwind classes and update Badge and Button components [#3](https://github.com/rjvim/react-component-library-starter/pull/3) ([@rjvim](https://github.com/rjvim))
+
+#### Authors: 1
+
+- Rajiv Seelam ([@rjvim](https://github.com/rjvim))
+
+---
+
 # v0.2.0 (Mon Jan 20 2025)
 
 #### 🚀 Enhancement

@@ -1,3 +1,17 @@
+# v0.3.0 (Mon Jan 20 2025)
+
+#### 🚀 Enhancement
+
+- feat: update @rcls/elements package version and add tailwindcss-scoped-preflight support [#3](https://github.com/rjvim/react-component-library-starter/pull/3) ([@rjvim](https://github.com/rjvim))
+- feat: update @rcls/elements package to version 0.2.1 and adjust import paths [#3](https://github.com/rjvim/react-component-library-starter/pull/3) ([@rjvim](https://github.com/rjvim))
+- feat: add prefix to Tailwind classes and update Badge and Button components [#3](https://github.com/rjvim/react-component-library-starter/pull/3) ([@rjvim](https://github.com/rjvim))
+
+#### Authors: 1
+
+- Rajiv Seelam ([@rjvim](https://github.com/rjvim))
+
+---
+
 # v0.2.0 (Mon Jan 20 2025)
 
 #### 🚀 Enhancement
