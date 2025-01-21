@@ -6,7 +6,7 @@
     A starting point for your component library with docs, versioning, release notes
     <br />
     <br />
-    <a href="https://midday.ai">Article on setting up from scratch</a>
+    <a href="https://rjv.im/building-react-component-library-configure-vite-tailwind">Article on setting up from scratch</a>
     ·
     <a href="https://github.com/rjvim/react-component-library-starter/issues">Issues</a>
   </p>
