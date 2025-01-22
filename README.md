@@ -69,6 +69,8 @@ Open `apps/docs/docusaurus.config.ts` and configure:
 - organizationName
 - projectName
 
+Make you have given workflow permissions at https://github.com/rjvim/responsive-preview-react/settings/actions (as of Jan 2025)
+
 And run `npm run docs:deploy`, this command would deploy docs site to Github Pages. You can adjust the `url` of the site in config based on where you would like to host your docs.
 
 ### Push to Github
