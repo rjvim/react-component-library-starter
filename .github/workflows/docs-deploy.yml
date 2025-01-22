@@ -9,7 +9,7 @@ on:
       - ".github/workflows/docs-deploy.yml"
 
 concurrency:
-  group: site-deploy
+  group: docs-deploy
   cancel-in-progress: true
 
 jobs:
@@ -30,28 +30,13 @@ jobs:
         uses: actions/cache@v4
         with:
           path: node_modules
-          key: site-npm-deps-${{ hashFiles('package-lock.json') }}
+          key: docs-npm-deps-${{ hashFiles('package-lock.json') }}
           restore-keys: |
-            site-npm-deps-${{ hashFiles('package-lock.json') }}
+            docs-npm-deps-${{ hashFiles('package-lock.json') }}
 
-      - name: Build site
+      - name: Build docs
         run: |
           npm run docs:build
-
-      # - name: Build site
-      #   run: |
-      #     timeout 1m npm run site:build || true
-      #     # Kill any remaining node processes
-      #     pkill node || true
-
-      - name: Debug directory structure
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "Directory contents:"
-          ls -la
-          echo "Build directory contents:"
-          ls -la apps/docs/build/ || echo "Build directory not found!"
 
       - uses: JamesIves/github-pages-deploy-action@v4
         with:

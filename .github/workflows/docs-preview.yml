@@ -1,4 +1,4 @@
-name: Site PR previews
+name: Docs PR previews
 
 on:
   pull_request:
@@ -12,7 +12,7 @@ on:
       - ".github/workflows/docs-preview.yml"
 
 concurrency:
-  group: site-preview-${{ github.workflow }}-${{ github.ref }}
+  group: docs-preview-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -37,24 +37,14 @@ jobs:
         env:
           PR_NUMBER: ${{ github.event.number }}
 
-      - name: Build site
+      - name: Build docs
         if: github.event.action != 'closed'
         run: |
           npm run docs:build
         env:
           PR_NUMBER: ${{ github.event.number }}
 
-      - name: Debug directory structure
-        if: github.event.action != 'closed'
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "Directory contents:"
-          ls -la
-          echo "Build directory contents:"
-          ls -la apps/site/build/ || echo "Build directory not found!"
-
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ./apps/site/build/
+          source-dir: ./apps/docs/build/
