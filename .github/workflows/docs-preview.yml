@@ -1,0 +1,60 @@
+name: Site PR previews
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+    paths:
+      - "apps/docs/**"
+      - ".github/workflows/docs-preview.yml"
+
+concurrency:
+  group: site-preview-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cache node modules
+        if: github.event.action != 'closed'
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: preview-npm-deps-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            preview-npm-deps-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        if: github.event.action != 'closed'
+        run: npm ci
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+
+      - name: Build site
+        if: github.event.action != 'closed'
+        run: |
+          npm run docs:build
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+
+      - name: Debug directory structure
+        if: github.event.action != 'closed'
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Directory contents:"
+          ls -la
+          echo "Build directory contents:"
+          ls -la apps/site/build/ || echo "Build directory not found!"
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./apps/site/build/

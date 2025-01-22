@@ -4,6 +4,11 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+const BASE_URL =
+  process.env.PR_NUMBER !== undefined
+    ? `/pr-preview/pr-${process.env.PR_NUMBER}/`
+    : "/";
+
 const config: Config = {
   title: "My Site",
   tagline: "Dinosaurs are cool",
@@ -14,7 +19,7 @@ const config: Config = {
   url: "https://rcls.rjv.im",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: BASE_URL,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
