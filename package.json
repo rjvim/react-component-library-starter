@@ -21,7 +21,6 @@
     "@auto-it/omit-commits": "^11.3.0",
     "@auto-it/omit-release-notes": "^11.3.0",
     "@auto-it/released": "^11.3.0",
-    "@rcls/elements": "^0.0.0",
     "auto": "^11.3.0",
     "lerna": "^8.1.9"
   }
