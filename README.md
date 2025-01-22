@@ -59,6 +59,7 @@ There is one package in this repo, you need to rename it.
 
 - Run `npm install`
 - Run `npm run build` (We are running to make sure things are working fine)
+- Make a copy of .env.example and name it as .env, and input tokens
 - Run `npx auto create-labels` (These labels would be used by auto for versioning and release notes)
 
 ### Configure & Deploy Docs
