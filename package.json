@@ -12,7 +12,10 @@
     "docs:serve": "lerna run serve --scope apps-docs",
     "docs:deploy": "lerna run deploy --scope apps-docs",
     "package:build": "lerna run build --scope @rcls/elements",
-    "package:dev": "lerna run dev --scope @rcls/elements"
+    "package:dev": "lerna run dev --scope @rcls/elements",
+    "elements-tw-v4:build": "lerna run build --scope @rcls/elements-tw-v4",
+    "elements-tw-v4:preview": "lerna run preview --scope @rcls/elements-tw-v4",
+    "elements-tw-v4:dev": "lerna run dev --scope @rcls/elements-tw-v4"
   },
   "devDependencies": {
     "@auto-it/all-contributors": "^11.3.0",
