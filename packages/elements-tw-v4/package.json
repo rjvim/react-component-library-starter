@@ -11,8 +11,8 @@
       "default": "./dist/main.js"
     },
     "./elements.css": {
-      "require": "./dist/assets/elements.css",
-      "default": "./dist/assets/elements.css"
+      "require": "./dist/assets/elements-tw-v4.css",
+      "default": "./dist/assets/elements-tw-v4.css"
     }
   },
   "files": [
