@@ -43,7 +43,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npx auto shipit --dry-run > output.txt 2>&1
+          npx auto shipit --dry-run --no-color > output.txt 2>&1
 
           # Print the raw output for inspection
           echo "Raw output:"
@@ -56,19 +56,13 @@ jobs:
       - name: Check for version bump
         id: check
         run: |
-          npx auto shipit --dry-run > output.txt 2>&1
-
-          # Initialize HAS_VERSION_BUMP to 0 if grep returns nothing
-          HAS_VERSION_BUMP=$(grep -c "version bump: none" output.txt || echo "0")
-          echo "Raw value: $HAS_VERSION_BUMP"
-
-          # Use numeric comparison
-          if [ "$(echo "$HAS_VERSION_BUMP" | tr -d '[:space:]')" -eq "0" ]; then
-            echo "should_release=true" >> $GITHUB_OUTPUT
-            echo "Version bump needed"
-          else
+          # Run command directly and grep stderr as well
+          if npx auto shipit --dry-run 2>&1 | grep -q "version bump: none"; then
             echo "should_release=false" >> $GITHUB_OUTPUT
             echo "No version bump needed"
+          else
+            echo "should_release=true" >> $GITHUB_OUTPUT
+            echo "Version bump needed"
           fi
 
   # release:
