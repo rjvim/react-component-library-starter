@@ -6,6 +6,7 @@
     "apps/*"
   ],
   "scripts": {
+    "clean": "npx rimraf node_modules && find . -name 'node_modules' -type d -prune -exec npx rimraf {} + && find . -name 'dist' -type d -prune -exec npx rimraf {} +",
     "canary": "npx auto canary --force",
     "build": "lerna run build",
     "docs:start": "lerna run start --scope apps-docs",
@@ -26,6 +27,7 @@
     "@auto-it/omit-release-notes": "^11.3.0",
     "@auto-it/released": "^11.3.0",
     "auto": "^11.3.0",
-    "lerna": "^8.1.9"
+    "lerna": "^8.1.9",
+    "rimraf": "^6.0.1"
   }
 }
