@@ -1,3 +1,41 @@
+# v0.5.0 (Thu Feb 13 2025)
+
+#### 🚀 Enhancement
+
+- feat: update README to include monorepo package structure and descriptions [#5](https://github.com/rjvim/react-component-library-starter/pull/5) ([@rjvim](https://github.com/rjvim))
+- feat: remove commented-out code for release creation in workflow ([@rjvim](https://github.com/rjvim))
+- feat: update release workflow to enable caching, install dependencies, and create release ([@rjvim](https://github.com/rjvim))
+- feat: add environment variables for GitHub and npm tokens in release workflow ([@rjvim](https://github.com/rjvim))
+- feat: improve output handling in release workflow by cleaning ANSI codes and adding version bump check ([@rjvim](https://github.com/rjvim))
+- feat: enhance version bump check with detailed output and Node.js/npm version logging ([@rjvim](https://github.com/rjvim))
+- feat: simplify version bump check by removing debug output and using fgrep for matching ([@rjvim](https://github.com/rjvim))
+- feat: enable caching of node modules in release workflow ([@rjvim](https://github.com/rjvim))
+- feat: enhance version bump check with detailed output logging and grep pattern testing ([@rjvim](https://github.com/rjvim))
+- feat: update version bump check to match output message in release workflow ([@rjvim](https://github.com/rjvim))
+- feat: update release workflow to suppress color output in dry-run command ([@rjvim](https://github.com/rjvim))
+- feat: improve version bump check by suppressing color output and refining grep logic in release workflow ([@rjvim](https://github.com/rjvim))
+- feat: update version bump check to use output file and grep for counting in release workflow ([@rjvim](https://github.com/rjvim))
+- feat: improve version bump check by using awk for counting in release workflow ([@rjvim](https://github.com/rjvim))
+- feat: simplify version bump check by removing file output and ANSI color codes in release workflow ([@rjvim](https://github.com/rjvim))
+- feat: update version bump check to save output to a file and match pattern in release workflow ([@rjvim](https://github.com/rjvim))
+- feat: enhance output handling in release workflow by logging raw output and line numbers ([@rjvim](https://github.com/rjvim))
+- feat: improve version bump check by removing ANSI color codes in release workflow ([@rjvim](https://github.com/rjvim))
+- feat: add debug output for version bump check in release workflow ([@rjvim](https://github.com/rjvim))
+- feat: add step to create release in GitHub workflows with dry-run option ([@rjvim](https://github.com/rjvim))
+- feat: add caching for node modules and install dependencies in release workflow ([@rjvim](https://github.com/rjvim))
+- feat: simplify version bump check in release workflow and improve output handling ([@rjvim](https://github.com/rjvim))
+- feat: enhance version bump check in release workflow and add debug output ([@rjvim](https://github.com/rjvim))
+- feat: add check-release job to GitHub workflows for version bump validation ([@rjvim](https://github.com/rjvim))
+- feat: update build command in GitHub workflows for documentation ([@rjvim](https://github.com/rjvim))
+- `apps-docs`
+  - feat: enable import of elements.css in custom.css for improved styling ([@rjvim](https://github.com/rjvim))
+
+#### Authors: 1
+
+- Rajiv Seelam ([@rjvim](https://github.com/rjvim))
+
+---
+
 # v0.4.0 (Thu Feb 13 2025)
 
 #### 🚀 Enhancement
