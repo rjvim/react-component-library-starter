@@ -43,7 +43,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npx auto shipit --dry-run
+          npx auto shipit --dry-run > output.txt 2>&1
+
+          # Print the raw output for inspection
+          echo "Raw output:"
+          cat output.txt
+
+          # Print each line with line numbers and special characters visible
+          echo "Output with special characters visible:"
+          cat -A output.txt
 
       - name: Check for version bump
         id: check
