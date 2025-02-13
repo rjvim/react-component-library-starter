@@ -1,3 +1,15 @@
+# v0.4.0 (Thu Feb 13 2025)
+
+#### ⚠️ Pushed to `main`
+
+- Update tsconfig.json ([@rjvim](https://github.com/rjvim))
+
+#### Authors: 1
+
+- Rajiv Seelam ([@rjvim](https://github.com/rjvim))
+
+---
+
 # v0.3.0 (Mon Jan 20 2025)
 
 #### 🚀 Enhancement

@@ -1,3 +1,42 @@
+# v0.4.0 (Thu Feb 13 2025)
+
+#### 🚀 Enhancement
+
+- feat: expand README with detailed project overview and usage instructions; add .env.example for environment configuration ([@rjvim](https://github.com/rjvim))
+- feat: enhance README with project description and links ([@rjvim](https://github.com/rjvim))
+- `apps-docs`
+  - feat: rename CSS class from 'twp' to 'twp4' in demo documentation for consistency [#4](https://github.com/rjvim/react-component-library-starter/pull/4) ([@rjvim](https://github.com/rjvim))
+  - feat: update elements-tw-v4 demo documentation and adjust component structure [#4](https://github.com/rjvim/react-component-library-starter/pull/4) ([@rjvim](https://github.com/rjvim))
+  - feat: remove outdated tutorial images and documentation files, and add new demo examples [#4](https://github.com/rjvim/react-component-library-starter/pull/4) ([@rjvim](https://github.com/rjvim))
+  - feat: add PR preview workflow and dynamic base URL configuration ([@rjvim](https://github.com/rjvim))
+- `@rcls/elements-tw-v4`
+  - feat: rename CSS class from 'twp' to 'twp4' for consistency in elements-tw-v4 [#4](https://github.com/rjvim/react-component-library-starter/pull/4) ([@rjvim](https://github.com/rjvim))
+  - feat: add canary script to package.json and remove outdated CHANGELOG.md [#4](https://github.com/rjvim/react-component-library-starter/pull/4) ([@rjvim](https://github.com/rjvim))
+  - feat: initialize elements-tw-v4 package with basic structure and components [#4](https://github.com/rjvim/react-component-library-starter/pull/4) ([@rjvim](https://github.com/rjvim))
+- `apps-docs`, `@rcls/elements-tw-v4`
+  - feat: update elements-tw-v4 integration and adjust component class names for consistency [#4](https://github.com/rjvim/react-component-library-starter/pull/4) ([@rjvim](https://github.com/rjvim))
+  - feat: integrate elements-tw-v4 package and update demo documentation [#4](https://github.com/rjvim/react-component-library-starter/pull/4) ([@rjvim](https://github.com/rjvim))
+
+#### 🐛 Bug Fix
+
+- fix: rename site references to docs in workflow files for clarity ([@rjvim](https://github.com/rjvim))
+- fix: update link in README for article on setting up from scratch ([@rjvim](https://github.com/rjvim))
+- fix: update commit message prefixes for apps-docs ([@rjvim](https://github.com/rjvim))
+
+#### ⚠️ Pushed to `main`
+
+- Create LICENSE ([@rjvim](https://github.com/rjvim))
+- Update README.md ([@rjvim](https://github.com/rjvim))
+- Update package.json ([@rjvim](https://github.com/rjvim))
+- `@rcls/elements`
+  - Update tsconfig.json ([@rjvim](https://github.com/rjvim))
+
+#### Authors: 1
+
+- Rajiv Seelam ([@rjvim](https://github.com/rjvim))
+
+---
+
 # v0.3.0 (Mon Jan 20 2025)
 
 #### 🚀 Enhancement
