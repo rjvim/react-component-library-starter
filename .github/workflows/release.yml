@@ -25,14 +25,20 @@ jobs:
       - name: Check for version bump
         id: check
         run: |
-          HAS_VERSION_BUMP=$(npx auto shipit --dry-run | grep -c "Calculated version bump: none" || true)
-          if [ "$HAS_VERSION_BUMP" -eq "1" ]; then
+          # Save the output to a file to preserve newlines
+          npx auto shipit --dry-run > version_check.txt 2>&1
+
+          # Check if the output contains "Calculated version bump: none"
+          if grep -q "Calculated version bump: none" version_check.txt; then
             echo "should_release=false" >> $GITHUB_OUTPUT
             echo "No version bump needed"
           else
             echo "should_release=true" >> $GITHUB_OUTPUT
             echo "Version bump needed"
           fi
+
+          # Print the complete output for debugging
+          cat version_check.txt
 
   release:
     runs-on: ubuntu-latest
