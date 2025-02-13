@@ -56,36 +56,9 @@ jobs:
       - name: Check for version bump
         id: check
         run: |
-          # Run and save output
-          npx auto shipit --dry-run > output.txt 2>&1
-
-          echo "Debug - Output with hexdump:"
-          cat output.txt | hexdump -C
-
-          echo "Debug - Each line separately:"
-          while IFS= read -r line; do
-            echo "Line: '$line'"
-          done < output.txt
-
-          # Try grep with various patterns
-          echo "Debug - Trying grep patterns:"
-          echo "Pattern 1 (exact):"
-          grep "Calculated version bump: none" output.txt || echo "No match"
-
-          echo "Pattern 2 (case insensitive):"
-          grep -i "calculated version bump: none" output.txt || echo "No match"
-
-          echo "Pattern 3 (with surrounding context):"
-          grep -A 1 -B 1 "none" output.txt || echo "No match"
-
-          # Make the decision
-          if grep -F "Calculated version bump: none" output.txt; then
-            echo "should_release=false" >> $GITHUB_OUTPUT
-            echo "No version bump needed"
-          else
-            echo "should_release=true" >> $GITHUB_OUTPUT
-            echo "Version bump needed"
-          fi
+          npx auto shipit --dry-run 2>/dev/null | fgrep -q "Calculated version bump: none" && \
+          echo "should_release=false" >> $GITHUB_OUTPUT || \
+          echo "should_release=true" >> $GITHUB_OUTPUT
 
   # release:
   #   runs-on: ubuntu-latest
