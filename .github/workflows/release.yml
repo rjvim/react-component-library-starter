@@ -22,21 +22,21 @@ jobs:
         with:
           node-version: 22.x
 
-      - name: Cache node modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: npm-deps-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-deps-${{ hashFiles('package-lock.json') }}
+      # - name: Cache node modules
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: node_modules
+      #     key: npm-deps-${{ hashFiles('package-lock.json') }}
+      #     restore-keys: |
+      #       npm-deps-${{ hashFiles('package-lock.json') }}
 
-      - name: Install Dependencies
-        run: |
-          npm ci
+      # - name: Install Dependencies
+      #   run: |
+      #     npm ci
 
-      - name: Build
-        run: |
-          npm run build
+      # - name: Build
+      #   run: |
+      #     npm run build
 
       - name: Create Release
         env:
@@ -56,7 +56,30 @@ jobs:
       - name: Check for version bump
         id: check
         run: |
-          if npx auto shipit --dry-run 2>&1 | grep -q "Calculated version bump: none"; then
+          # Run and save output
+          npx auto shipit --dry-run > output.txt 2>&1
+
+          echo "Debug - Output with hexdump:"
+          cat output.txt | hexdump -C
+
+          echo "Debug - Each line separately:"
+          while IFS= read -r line; do
+            echo "Line: '$line'"
+          done < output.txt
+
+          # Try grep with various patterns
+          echo "Debug - Trying grep patterns:"
+          echo "Pattern 1 (exact):"
+          grep "Calculated version bump: none" output.txt || echo "No match"
+
+          echo "Pattern 2 (case insensitive):"
+          grep -i "calculated version bump: none" output.txt || echo "No match"
+
+          echo "Pattern 3 (with surrounding context):"
+          grep -A 1 -B 1 "none" output.txt || echo "No match"
+
+          # Make the decision
+          if grep -F "Calculated version bump: none" output.txt; then
             echo "should_release=false" >> $GITHUB_OUTPUT
             echo "No version bump needed"
           else
