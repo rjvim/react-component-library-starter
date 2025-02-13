@@ -58,9 +58,11 @@ jobs:
         run: |
           echo "Node.js version: $(node -v)"
           echo "npm version: $(npm -v)"
-          OUTPUT=$(npx auto shipit --dry-run --no-color 2>&1)
-          echo "Captured Output:"
+          OUTPUT=$(npx auto shipit --dry-run 2>&1 | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g")
+          echo "Cleaned Output:"
           echo "$OUTPUT"
+
+          # Check if the output contains the desired string
           if echo "$OUTPUT" | grep -q "Calculated version bump: none"; then
             echo "should_release=false" >> $GITHUB_OUTPUT
             echo "No version bump needed"
