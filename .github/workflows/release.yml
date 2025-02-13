@@ -7,6 +7,33 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  check-release:
+    runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci') }}
+    outputs:
+      should_release: ${{ steps.check.outputs.should_release }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 22.x
+
+      - name: Check for version bump
+        id: check
+        run: |
+          HAS_VERSION_BUMP=$(npx auto shipit --dry-run | grep -c "Calculated version bump: none" || true)
+          if [ "$HAS_VERSION_BUMP" -eq "1" ]; then
+            echo "should_release=false" >> $GITHUB_OUTPUT
+            echo "No version bump needed"
+          else
+            echo "should_release=true" >> $GITHUB_OUTPUT
+            echo "Version bump needed"
+          fi
+
   release:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci') }}
