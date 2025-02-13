@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 
 @layer base {
-  .twp {
+  .twp4 {
     @import "tailwindcss/preflight.css";
   }
 
