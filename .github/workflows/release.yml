@@ -43,7 +43,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npx auto shipit --dry-run --no-color > output.txt 2>&1
+          npx auto shipit --dry-run > output.txt 2>&1
 
           # Print the raw output for inspection
           echo "Raw output:"
