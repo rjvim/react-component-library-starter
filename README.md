@@ -21,6 +21,14 @@ This repo has been built with two intentions:
 - To help you get started building component libraries with ease
 - To demonstrate how to build a component library starter
 
+## Packages
+
+This repo is structured as a monorepo with following packages:
+
+- apps/docs: Docusaurus site for documentation
+- packages/elements: React component library using Vite and Tailwind CSS
+- packages/elements-tw-v4: React component library using Vite and Tailwind CSS V4
+
 ## Features
 
 1. **Tree Shaking**: Built with [Vite's lib mode](https://vite.dev/) - Eliminates unused code during build process, reducing bundle sizes for better performance.
