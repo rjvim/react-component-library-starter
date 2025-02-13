@@ -17,7 +17,10 @@
     "package:dev": "lerna run dev --scope @rcls/elements",
     "elements-tw-v4:build": "lerna run build --scope @rcls/elements-tw-v4",
     "elements-tw-v4:preview": "lerna run preview --scope @rcls/elements-tw-v4",
-    "elements-tw-v4:dev": "lerna run dev --scope @rcls/elements-tw-v4"
+    "elements-tw-v4:dev": "lerna run dev --scope @rcls/elements-tw-v4",
+    "elements-shadcn-twv4:build": "lerna run build --scope @rcls/elements-shadcn-twv4",
+    "elements-shadcn-twv4:preview": "lerna run preview --scope @rcls/elements-shadcn-twv4",
+    "elements-shadcn-twv4:dev": "lerna run dev --scope @rcls/elements-shadcn-twv4"
   },
   "devDependencies": {
     "@auto-it/all-contributors": "^11.3.0",
