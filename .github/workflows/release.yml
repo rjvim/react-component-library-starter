@@ -56,9 +56,18 @@ jobs:
       - name: Check for version bump
         id: check
         run: |
-          npx auto shipit --dry-run 2>/dev/null | fgrep -q "Calculated version bump: none" && \
-          echo "should_release=false" >> $GITHUB_OUTPUT || \
-          echo "should_release=true" >> $GITHUB_OUTPUT
+          echo "Node.js version: $(node -v)"
+          echo "npm version: $(npm -v)"
+          OUTPUT=$(npx auto shipit --dry-run --no-color 2>&1)
+          echo "Captured Output:"
+          echo "$OUTPUT"
+          if echo "$OUTPUT" | grep -q "Calculated version bump: none"; then
+            echo "should_release=false" >> $GITHUB_OUTPUT
+            echo "No version bump needed"
+          else
+            echo "should_release=true" >> $GITHUB_OUTPUT
+            echo "Version bump needed"
+          fi
 
   # release:
   #   runs-on: ubuntu-latest
