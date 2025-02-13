@@ -1,20 +1,15 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import dts from "vite-plugin-dts";
-import { execSync } from "child_process";
+import tailwindcss from "@tailwindcss/vite";
+import path from "path";
 import { extname, relative, resolve } from "path";
 import { fileURLToPath } from "node:url";
 import { glob } from "glob";
-import tailwindcss from "@tailwindcss/vite";
-import path from "path";
+import { execSync } from "child_process";
+import dts from "vite-plugin-dts";
 
 // https://vite.dev/config/
 export default defineConfig({
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./lib"),
-    },
-  },
   plugins: [
     {
       name: "run-tsc",
@@ -26,9 +21,35 @@ export default defineConfig({
     dts({
       tsconfigPath: resolve(__dirname, "tsconfig.lib.json"),
     }),
-    tailwindcss(),
+    // tailwindcss(),
+    // {
+    //   name: "build-tailwind",
+    //   buildStart() {
+    //     execSync(
+    //       "npx @tailwindcss/cli -i ./index.css -o ./output.css --optimize --watch"
+    //     );
+    //   },
+    // },
+    {
+      name: "css-transform",
+      transform(code, id) {
+        if (id.endsWith(".css")) {
+          return {
+            code: code.replace(/\.twps :root/g, ".twps"),
+            // .replace(/@layer base\b/g, "@layer bp_base"),
+            map: null,
+          };
+        }
+      },
+    },
   ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./lib"),
+    },
+  },
   build: {
+    cssMinify: true,
     copyPublicDir: false,
     lib: {
       entry: resolve(__dirname, "lib/main.ts"),
