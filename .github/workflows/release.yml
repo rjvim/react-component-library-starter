@@ -56,8 +56,7 @@ jobs:
       - name: Check for version bump
         id: check
         run: |
-          # Run command directly and grep stderr as well
-          if npx auto shipit --dry-run 2>&1 | grep -q "version bump: none"; then
+          if npx auto shipit --dry-run 2>&1 | grep -q "Calculated version bump: none"; then
             echo "should_release=false" >> $GITHUB_OUTPUT
             echo "No version bump needed"
           else
