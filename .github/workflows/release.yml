@@ -56,9 +56,14 @@ jobs:
       - name: Check for version bump
         id: check
         run: |
-          HAS_VERSION_BUMP=$(npx auto shipit --dry-run --no-color | awk '/Calculated version bump: none/ {count++} END {print count}' || true)
+          npx auto shipit --dry-run > output.txt 2>&1
+
+          # Initialize HAS_VERSION_BUMP to 0 if grep returns nothing
+          HAS_VERSION_BUMP=$(grep -c "version bump: none" output.txt || echo "0")
           echo "Raw value: $HAS_VERSION_BUMP"
-          if [ "$HAS_VERSION_BUMP" -eq "0" ]; then
+
+          # Use numeric comparison
+          if [ "$(echo "$HAS_VERSION_BUMP" | tr -d '[:space:]')" -eq "0" ]; then
             echo "should_release=true" >> $GITHUB_OUTPUT
             echo "Version bump needed"
           else
