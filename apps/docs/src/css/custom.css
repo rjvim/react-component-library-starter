@@ -29,5 +29,5 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* @import "@rcls/elements/elements.css"; */
+@import "@rcls/elements/elements.css";
 @import "@rcls/elements-tw-v4/elements.css";
