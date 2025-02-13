@@ -5,9 +5,15 @@ import { execSync } from "child_process";
 import { extname, relative, resolve } from "path";
 import { fileURLToPath } from "node:url";
 import { glob } from "glob";
+import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./lib"),
+    },
+  },
   plugins: [
     {
       name: "run-tsc",
@@ -51,8 +57,23 @@ export default defineConfig({
       ),
       output: {
         assetFileNames: "assets/[name][extname]",
-        entryFileNames: () => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        entryFileNames: (chunkInfo) => {
           return "[name].js";
+        },
+        manualChunks: (id) => {
+          if (id.includes("/lucide-react/dist/esm/icons/")) {
+            return "lucide-react/icons";
+          }
+
+          if (id.includes("node_modules/@radix-ui/")) {
+            const match = id.match(/@radix-ui\/([^/]+)/);
+            if (match) {
+              return `radix-ui/${match[1]}`;
+            }
+          }
+
+          return null;
         },
       },
     },
