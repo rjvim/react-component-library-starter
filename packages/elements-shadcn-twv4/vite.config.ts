@@ -5,6 +5,7 @@ import { execSync } from "child_process";
 import { extname, relative, resolve } from "path";
 import { fileURLToPath } from "node:url";
 import { glob } from "glob";
+import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 // https://vite.dev/config/
@@ -25,6 +26,7 @@ export default defineConfig({
     dts({
       tsconfigPath: resolve(__dirname, "tsconfig.lib.json"),
     }),
+    tailwindcss(),
   ],
   build: {
     copyPublicDir: false,
@@ -57,23 +59,8 @@ export default defineConfig({
       ),
       output: {
         assetFileNames: "assets/[name][extname]",
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        entryFileNames: (chunkInfo) => {
+        entryFileNames: () => {
           return "[name].js";
-        },
-        manualChunks: (id) => {
-          if (id.includes("/lucide-react/dist/esm/icons/")) {
-            return "lucide-react/icons";
-          }
-
-          if (id.includes("node_modules/@radix-ui/")) {
-            const match = id.match(/@radix-ui\/([^/]+)/);
-            if (match) {
-              return `radix-ui/${match[1]}`;
-            }
-          }
-
-          return null;
         },
       },
     },
