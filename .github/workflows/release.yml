@@ -56,8 +56,8 @@ jobs:
       - name: Check for version bump
         id: check
         run: |
-          # Remove ANSI color codes and then grep
-          HAS_VERSION_BUMP=$(npx auto shipit --dry-run | sed 's/\x1b\[[0-9;]*m//g' | grep -c "Calculated version bump: none" || true)
+          # Save output and grep with a pattern that matches anywhere in the line
+          HAS_VERSION_BUMP=$(npx auto shipit --dry-run > output.txt 2>&1 && grep -c ".*version bump: none" output.txt || true)
           echo "Raw value: $HAS_VERSION_BUMP"
           if [ "$HAS_VERSION_BUMP" -eq "0" ]; then
             echo "should_release=true" >> $GITHUB_OUTPUT
