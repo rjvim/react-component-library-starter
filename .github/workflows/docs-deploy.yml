@@ -36,7 +36,7 @@ jobs:
 
       - name: Build docs
         run: |
-          npm run docs:build
+          npm run build
 
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
