@@ -30,7 +30,7 @@
     "@docusaurus/module-type-aliases": "3.7.0",
     "@docusaurus/tsconfig": "3.7.0",
     "@docusaurus/types": "3.7.0",
-    "@rcls/elements": "^0.2.1--canary.457943b.0",
+    "@rcls/elements": "^0.5.1--canary.e4714f1.0",
     "typescript": "~5.6.2"
   },
   "browserslist": {
