@@ -1,3 +1,29 @@
+# v0.6.0 (Fri Feb 14 2025)
+
+#### 🚀 Enhancement
+
+- feat: remove unused PostCSS configuration and update class names for consistency in components [#6](https://github.com/rjvim/react-component-library-starter/pull/6) ([@rjvim](https://github.com/rjvim))
+- feat: integrate tailwindcss-animate and update styling conventions across components [#6](https://github.com/rjvim/react-component-library-starter/pull/6) ([@rjvim](https://github.com/rjvim))
+- feat: add initial configuration for elements-shadcn-twv4 package with dependencies [#6](https://github.com/rjvim/react-component-library-starter/pull/6) ([@rjvim](https://github.com/rjvim))
+- feat: initialize elements-shadcn-twv4 package with Tailwind CSS and basic components [#6](https://github.com/rjvim/react-component-library-starter/pull/6) ([@rjvim](https://github.com/rjvim))
+- feat: update package dependencies and add clean script for improved build process ([@rjvim](https://github.com/rjvim))
+- `apps-docs`
+  - feat: update @rcls/elements dependency to version 0.5.1 and refresh package-lock.json [#6](https://github.com/rjvim/react-component-library-starter/pull/6) ([@rjvim](https://github.com/rjvim))
+- `@rcls/elements-tw-v4`, `@rcls/elements`, `@rcls/elements-shadcn-twv4`
+  - feat: update React and TypeScript dependencies to version 19.0.0 and clean up package configurations [#6](https://github.com/rjvim/react-component-library-starter/pull/6) ([@rjvim](https://github.com/rjvim))
+- `@rcls/elements-tw-v4`, `@rcls/elements-shadcn-twv4`
+  - feat: add initial implementation of App component and related files for shad-v4 package [#6](https://github.com/rjvim/react-component-library-starter/pull/6) ([@rjvim](https://github.com/rjvim))
+
+#### 🐛 Bug Fix
+
+- fix: revert package version to 0.0.0 for initial development [#6](https://github.com/rjvim/react-component-library-starter/pull/6) ([@rjvim](https://github.com/rjvim))
+
+#### Authors: 1
+
+- Rajiv Seelam ([@rjvim](https://github.com/rjvim))
+
+---
+
 # v0.5.0 (Thu Feb 13 2025)
 
 #### 🚀 Enhancement
